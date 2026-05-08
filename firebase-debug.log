@@ -1,0 +1,195 @@
+[debug] [2026-05-08T04:29:24.097Z] ----------------------------------------------------------------------
+[debug] [2026-05-08T04:29:24.099Z] Command:       /usr/local/bin/node /Users/xiaoyang/.npm-global/bin/firebase functions:shell
+[debug] [2026-05-08T04:29:24.100Z] CLI Version:   15.11.0
+[debug] [2026-05-08T04:29:24.100Z] Platform:      darwin
+[debug] [2026-05-08T04:29:24.100Z] Node Version:  v22.21.0
+[debug] [2026-05-08T04:29:24.101Z] Time:          Fri May 08 2026 12:29:24 GMT+0800 (China Standard Time)
+[debug] [2026-05-08T04:29:24.101Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-05-08T04:29:24.672Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-05-08T04:29:24.673Z] > authorizing via signed-in user (monotar.software@gmail.com)
+[debug] [2026-05-08T04:29:24.673Z] [iam] checking project dramacomb for permissions ["firebase.projects.get"]
+[debug] [2026-05-08T04:29:24.675Z] Checked if tokens are valid: false, expires at: 1778214535180
+[debug] [2026-05-08T04:29:24.675Z] Checked if tokens are valid: false, expires at: 1778214535180
+[debug] [2026-05-08T04:29:24.675Z] > refreshing access token with scopes: []
+[debug] [2026-05-08T04:29:24.677Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-05-08T04:29:24.677Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-05-08T04:29:28.605Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-05-08T04:29:28.606Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-05-08T04:29:28.621Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/dramacomb:testIamPermissions [none]
+[debug] [2026-05-08T04:29:28.621Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/dramacomb:testIamPermissions  x-goog-user-project=dramacomb
+[debug] [2026-05-08T04:29:28.621Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dramacomb:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2026-05-08T04:29:38.964Z] [iam] error while checking permissions, command may fail: TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'ProxyAgent'
+    |     property 'cache' -> object with constructor 'LRUCache'
+    |     property 'valList' -> object with constructor 'Array'
+    |     ...
+    |     property '_httpMessage' -> object with constructor 'ClientRequest'
+    --- property 'agent' closes the circle
+[warn] ⚠  functions: Functions Emulator unable to start on port 5000, starting on 5001 instead. {"metadata":{"emulator":{"name":"functions"},"message":"Functions Emulator unable to start on port 5000, starting on 5001 instead."}}
+[debug] [2026-05-08T04:29:39.229Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-05-08T04:29:41.548Z] defaultcredentials: writing to file /Users/xiaoyang/.config/firebase/monotar_software_gmail.com_application_default_credentials.json
+[debug] [2026-05-08T04:29:41.551Z] DEBUG: Setting GAC to /Users/xiaoyang/.config/firebase/monotar_software_gmail.com_application_default_credentials.json
+[debug] [2026-05-08T04:29:41.551Z] Checked if tokens are valid: true, expires at: 1778218167606
+[debug] [2026-05-08T04:29:41.551Z] Checked if tokens are valid: true, expires at: 1778218167606
+[debug] [2026-05-08T04:29:41.552Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/dramacomb/adminSdkConfig [none]
+[debug] [2026-05-08T04:29:44.825Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/dramacomb/adminSdkConfig 200
+[debug] [2026-05-08T04:29:44.826Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/dramacomb/adminSdkConfig {"projectId":"dramacomb","storageBucket":"dramacomb.firebasestorage.app"}
+[debug] [2026-05-08T04:29:44.841Z] [functions] Watching "/Users/xiaoyang/dramacomb/functions" for Cloud Functions...
+[debug] [2026-05-08T04:29:44.844Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2026-05-08T04:29:48.246Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "24"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^1.13.6",
+    "firebase-admin": "^13.6.0",
+    "firebase-functions": "^7.0.0",
+    "googleapis": "^140.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.4.1"
+  },
+  "private": true
+}
+[debug] [2026-05-08T04:29:48.247Z] Building nodejs source
+[debug] [2026-05-08T04:29:48.247Z] Failed to find version of module node: reached end of search path /Users/xiaoyang/dramacomb/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "24" doesn't match your global version "22". Using node@22 from host. 
+[debug] [2026-05-08T04:29:48.249Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-05-08T04:29:48.255Z] Found firebase-functions binary at '/Users/xiaoyang/dramacomb/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8380
+
+[debug] [2026-05-08T04:29:49.001Z] Got response from /__/functions.yaml {"endpoints":{"dailyTRC20Fetch":{"availableMemoryMb":256,"timeoutSeconds":300,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","secretEnvironmentVariables":[{"key":"GOOGLE_SERVICE_ACCOUNT_KEY"},{"key":"SPREADSHEET_ID"},{"key":"TOKENVIEW_API_KEY"}],"labels":{},"scheduleTrigger":{"schedule":"0 17 * * *","retryConfig":{},"timeZone":"UTC"},"entryPoint":"dailyTRC20Fetch"},"getTRC20Data":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","secretEnvironmentVariables":[{"key":"TOKENVIEW_API_KEY"}],"labels":{},"httpsTrigger":{},"entryPoint":"getTRC20Data"}},"specVersion":"v1alpha1","requiredAPIs":[{"api":"cloudscheduler.googleapis.com","reason":"Needed for scheduled functions."}],"extensions":{}}
+[debug] [2026-05-08T04:29:53.059Z] [functions] Loaded functions definitions from source: dailyTRC20Fetch, getTRC20Data.
+[debug] [2026-05-08T04:29:53.060Z] [functions[us-central1-dailyTRC20Fetch]] function ignored because the pubsub emulator does not exist or is not running.
+[debug] [2026-05-08T04:29:53.061Z] [functions[us-central1-getTRC20Data]] http function initialized (http://127.0.0.1:5001/dramacomb/us-central1/getTRC20Data).
+[info] i  functions: Loaded functions: dailyTRC20Fetch, getTRC20Data 
+[warn] ⚠  functions: The following emulators are not running, calls to these services will affect production: firestore, database, pubsub, storage, eventarc, tasks 
+[debug] [2026-05-08T04:30:14.108Z] shell:dailyTRC20Fetch: trigger={"entryPoint":"dailyTRC20Fetch","platform":"gcfv2","region":"us-central1","name":"dailyTRC20Fetch","id":"us-central1-dailyTRC20Fetch","codebase":"default","availableMemoryMb":256,"labels":{"EVENTARC_CLOUD_EVENT_SOURCE":"run-emulated.googleapis.com/projects/dramacomb/locations/us-central1/services/dailyTRC20Fetch"},"timeoutSeconds":300,"secretEnvironmentVariables":[{"key":"GOOGLE_SERVICE_ACCOUNT_KEY","secret":"GOOGLE_SERVICE_ACCOUNT_KEY","projectId":"dramacomb"},{"key":"SPREADSHEET_ID","secret":"SPREADSHEET_ID","projectId":"dramacomb"},{"key":"TOKENVIEW_API_KEY","secret":"TOKENVIEW_API_KEY","projectId":"dramacomb"}],"eventTrigger":{"eventType":"pubsub","resource":""},"schedule":{"schedule":"0 17 * * *","timeZone":"UTC","retryConfig":{}}}
+[debug] [2026-05-08T04:30:14.109Z] shell:dailyTRC20Fetch: opts={}, data={}
+[debug] [2026-05-08T04:30:14.124Z] DEBUG: [worker-pool] addWorker(us-central1-dailyTRC20Fetch)
+[debug] [2026-05-08T04:30:14.125Z] DEBUG: [worker-pool] Adding worker with key us-central1-dailyTRC20Fetch, total=1
+[debug] [2026-05-08T04:30:14.689Z] DEBUG: [runtime-status] [55875] Resolved module firebase-admin {"declared":true,"installed":true,"version":"13.7.0","resolution":"/Users/xiaoyang/dramacomb/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2026-05-08T04:30:14.689Z] DEBUG: [runtime-status] [55875] Resolved module firebase-functions {"declared":true,"installed":true,"version":"7.2.2","resolution":"/Users/xiaoyang/dramacomb/functions/node_modules/firebase-functions/lib/v2/index.js"}
+[debug] [2026-05-08T04:30:14.690Z] DEBUG: [runtime-status] [55875] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}]
+[debug] [2026-05-08T04:30:14.690Z] DEBUG: [runtime-status] [55875] Resolved module firebase-functions {"declared":true,"installed":true,"version":"7.2.2","resolution":"/Users/xiaoyang/dramacomb/functions/node_modules/firebase-functions/lib/v2/index.js"}
+[debug] [2026-05-08T04:30:14.690Z] DEBUG: [runtime-status] [55875] Detected firebase-functions v7+, skipping legacy stubs.
+[debug] [2026-05-08T04:30:14.691Z] DEBUG: [runtime-status] [55875] Resolved module firebase-admin {"declared":true,"installed":true,"version":"13.7.0","resolution":"/Users/xiaoyang/dramacomb/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2026-05-08T04:30:14.714Z] DEBUG: [runtime-status] [55875] Resolved module firebase-functions {"declared":true,"installed":true,"version":"7.2.2","resolution":"/Users/xiaoyang/dramacomb/functions/node_modules/firebase-functions/lib/v2/index.js"}
+[debug] [2026-05-08T04:30:14.833Z] DEBUG: [runtime-status] [55875] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"13.7.0","resolution":"/Users/xiaoyang/dramacomb/functions/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2026-05-08T04:30:15.231Z] DEBUG: [runtime-status] [55875] Functions runtime initialized. {"cwd":"/Users/xiaoyang/dramacomb/functions","node_version":"22.21.0"}
+[debug] [2026-05-08T04:30:15.232Z] DEBUG: [runtime-status] [55875] Listening to port: /var/folders/3k/29zxl2ld1jv47c1ky4b1h9fm0000gn/T/fire_emu_bb7f719331165659.sock
+[debug] [2026-05-08T04:30:15.250Z] DEBUG: [worker-us-central1-dailyTRC20Fetch-1b4d2246-aa5b-4c04-9f18-4db11ce06250]: IDLE
+[info] >  === 每日 TRC20 USDT 转入抓取开始 === {"user":"=== 每日 TRC20 USDT 转入抓取开始 ===","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-dailyTRC20Fetch"},"extension":{},"message":"\u001b[90m> \u001b[39m === 每日 TRC20 USDT 转入抓取开始 ==="}}
+[info] >  开始抓取 TPhfG1eoFp652ctsftobZJqMVwkZ1KAVv3 的 TRC20 USDT 转入记录 {"user":"开始抓取 TPhfG1eoFp652ctsftobZJqMVwkZ1KAVv3 的 TRC20 USDT 转入记录","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-dailyTRC20Fetch"},"extension":{},"message":"\u001b[90m> \u001b[39m 开始抓取 TPhfG1eoFp652ctsftobZJqMVwkZ1KAVv3 的 TRC20 USDT 转入记录"}}
+[info] >  时间范围: 2026-05-07 00:00:00 +08:00 ~ 2026-05-07 23:59:59 +08:00 {"user":"时间范围: 2026-05-07 00:00:00 +08:00 ~ 2026-05-07 23:59:59 +08:00","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-dailyTRC20Fetch"},"extension":{},"message":"\u001b[90m> \u001b[39m 时间范围: 2026-05-07 00:00:00 +08:00 ~ 2026-05-07 23:59:59 +08:00"}}
+[info] >  第 1 页: 共 49 条，当日转入累计 32 条 {"user":"第 1 页: 共 49 条，当日转入累计 32 条","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-dailyTRC20Fetch"},"extension":{},"message":"\u001b[90m> \u001b[39m 第 1 页: 共 49 条，当日转入累计 32 条"}}
+[info] >  已到达昨日数据前边界，停止翻页 {"user":"已到达昨日数据前边界，停止翻页","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-dailyTRC20Fetch"},"extension":{},"message":"\u001b[90m> \u001b[39m 已到达昨日数据前边界，停止翻页"}}
+[info] >  抓取完成，共 32 条转入记录 {"user":"抓取完成，共 32 条转入记录","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-dailyTRC20Fetch"},"extension":{},"message":"\u001b[90m> \u001b[39m 抓取完成，共 32 条转入记录"}}
+[warn] ⚠  Google API requested!
+   - URL: "https://www.googleapis.com/oauth2/v4/token"
+   - Be careful, this may be a production service. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-dailyTRC20Fetch"},"extension":{},"message":"Google API requested!\n   - URL: \"https://www.googleapis.com/oauth2/v4/token\"\n   - Be careful, this may be a production service."}}
+[warn] ⚠  Google API requested!
+   - URL: "https://sheets.googleapis.com/v4/spreadsheets/1KlTsTHk-j8oX2v3n5tVOiB1nvsdsCjElOE1FHp1cH8k"
+   - Be careful, this may be a production service. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-dailyTRC20Fetch"},"extension":{},"message":"Google API requested!\n   - URL: \"https://sheets.googleapis.com/v4/spreadsheets/1KlTsTHk-j8oX2v3n5tVOiB1nvsdsCjElOE1FHp1cH8k\"\n   - Be careful, this may be a production service."}}
+[info] >  {"severity":"ERROR","message":"Error: Google Sheets API has not been used in project 774411844296 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/sheets.googleapis.com/overview?project=774411844296 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.\n    at entryFromArgs (/Users/xiaoyang/dramacomb/functions/node_modules/firebase-functions/lib/logger/index.js:120:13)\n    at Object.error (/Users/xiaoyang/dramacomb/functions/node_modules/firebase-functions/lib/logger/index.js:109:8)\n    at httpFunc (/Users/xiaoyang/dramacomb/functions/node_modules/firebase-functions/lib/v2/providers/scheduler.js:53:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async runFunction (/Users/xiaoyang/.npm-global/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:399:9)\n    at async runHTTPS (/Users/xiaoyang/.npm-global/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:424:5)\n    at async /Users/xiaoyang/.npm-global/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:585:21"} {"user":{"severity":"ERROR","message":"Error: Google Sheets API has not been used in project 774411844296 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/sheets.googleapis.com/overview?project=774411844296 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.\n    at entryFromArgs (/Users/xiaoyang/dramacomb/functions/node_modules/firebase-functions/lib/logger/index.js:120:13)\n    at Object.error (/Users/xiaoyang/dramacomb/functions/node_modules/firebase-functions/lib/logger/index.js:109:8)\n    at httpFunc (/Users/xiaoyang/dramacomb/functions/node_modules/firebase-functions/lib/v2/providers/scheduler.js:53:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async runFunction (/Users/xiaoyang/.npm-global/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:399:9)\n    at async runHTTPS (/Users/xiaoyang/.npm-global/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:424:5)\n    at async /Users/xiaoyang/.npm-global/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:585:21"},"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-dailyTRC20Fetch"},"extension":{},"message":"\u001b[90m> \u001b[39m {\"severity\":\"ERROR\",\"message\":\"Error: Google Sheets API has not been used in project 774411844296 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/sheets.googleapis.com/overview?project=774411844296 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.\\n    at entryFromArgs (/Users/xiaoyang/dramacomb/functions/node_modules/firebase-functions/lib/logger/index.js:120:13)\\n    at Object.error (/Users/xiaoyang/dramacomb/functions/node_modules/firebase-functions/lib/logger/index.js:109:8)\\n    at httpFunc (/Users/xiaoyang/dramacomb/functions/node_modules/firebase-functions/lib/v2/providers/scheduler.js:53:25)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at async runFunction (/Users/xiaoyang/.npm-global/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:399:9)\\n    at async runHTTPS (/Users/xiaoyang/.npm-global/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:424:5)\\n    at async /Users/xiaoyang/.npm-global/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:585:21\"}"}}
+[debug] [2026-05-08T04:40:34.822Z] DEBUG: File /Users/xiaoyang/dramacomb/functions/package.json changed, reloading triggers
+[debug] [2026-05-08T04:40:35.830Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2026-05-08T04:40:36.777Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^1.13.6",
+    "firebase-admin": "^13.6.0",
+    "firebase-functions": "^7.0.0",
+    "googleapis": "^140.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.4.1"
+  },
+  "private": true
+}
+[debug] [2026-05-08T04:40:36.777Z] Building nodejs source
+[debug] [2026-05-08T04:40:36.777Z] Failed to find version of module node: reached end of search path /Users/xiaoyang/dramacomb/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "24" doesn't match your global version "22". Using node@22 from host. 
+[debug] [2026-05-08T04:40:36.784Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-05-08T04:40:36.786Z] Found firebase-functions binary at '/Users/xiaoyang/dramacomb/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8880
+
+[debug] [2026-05-08T04:40:37.529Z] Got response from /__/functions.yaml {"endpoints":{"dailyTRC20Fetch":{"availableMemoryMb":256,"timeoutSeconds":300,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","secretEnvironmentVariables":[{"key":"GOOGLE_SERVICE_ACCOUNT_KEY"},{"key":"SPREADSHEET_ID"},{"key":"TOKENVIEW_API_KEY"}],"labels":{},"scheduleTrigger":{"schedule":"0 17 * * *","retryConfig":{},"timeZone":"UTC"},"entryPoint":"dailyTRC20Fetch"},"getTRC20Data":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","secretEnvironmentVariables":[{"key":"TOKENVIEW_API_KEY"}],"labels":{},"httpsTrigger":{},"entryPoint":"getTRC20Data"}},"specVersion":"v1alpha1","requiredAPIs":[{"api":"cloudscheduler.googleapis.com","reason":"Needed for scheduled functions."}],"extensions":{}}
+[debug] [2026-05-08T04:40:41.577Z] [functions] Loaded functions definitions from source: dailyTRC20Fetch, getTRC20Data.
+[debug] [2026-05-08T04:40:41.577Z] DEBUG: [worker-pool] Shutting down IDLE worker (us-central1-dailyTRC20Fetch)
+[debug] [2026-05-08T04:40:41.577Z] DEBUG: [worker-us-central1-dailyTRC20Fetch-1b4d2246-aa5b-4c04-9f18-4db11ce06250]: FINISHING
+[debug] [2026-05-08T04:40:41.599Z] DEBUG: [worker-us-central1-dailyTRC20Fetch-1b4d2246-aa5b-4c04-9f18-4db11ce06250]: exited
+[debug] [2026-05-08T04:40:41.599Z] DEBUG: [worker-us-central1-dailyTRC20Fetch-1b4d2246-aa5b-4c04-9f18-4db11ce06250]: FINISHED
+[debug] [2026-05-08T04:40:57.367Z] shell:dailyTRC20Fetch: trigger={"entryPoint":"dailyTRC20Fetch","platform":"gcfv2","region":"us-central1","name":"dailyTRC20Fetch","id":"us-central1-dailyTRC20Fetch","codebase":"default","availableMemoryMb":256,"labels":{"EVENTARC_CLOUD_EVENT_SOURCE":"run-emulated.googleapis.com/projects/dramacomb/locations/us-central1/services/dailyTRC20Fetch"},"timeoutSeconds":300,"secretEnvironmentVariables":[{"key":"GOOGLE_SERVICE_ACCOUNT_KEY","secret":"GOOGLE_SERVICE_ACCOUNT_KEY","projectId":"dramacomb"},{"key":"SPREADSHEET_ID","secret":"SPREADSHEET_ID","projectId":"dramacomb"},{"key":"TOKENVIEW_API_KEY","secret":"TOKENVIEW_API_KEY","projectId":"dramacomb"}],"eventTrigger":{"eventType":"pubsub","resource":""},"schedule":{"schedule":"0 17 * * *","timeZone":"UTC","retryConfig":{}}}
+[debug] [2026-05-08T04:40:57.368Z] shell:dailyTRC20Fetch: opts={}, data={}
+[debug] [2026-05-08T04:40:57.368Z] DEBUG: [worker-pool] Cleaned up workers for us-central1-dailyTRC20Fetch: 1 --> 0
+[debug] [2026-05-08T04:40:57.378Z] DEBUG: [worker-pool] addWorker(us-central1-dailyTRC20Fetch)
+[debug] [2026-05-08T04:40:57.380Z] DEBUG: [worker-pool] Adding worker with key us-central1-dailyTRC20Fetch, total=1
+[debug] [2026-05-08T04:40:57.984Z] DEBUG: [runtime-status] [56036] Resolved module firebase-admin {"declared":true,"installed":true,"version":"13.7.0","resolution":"/Users/xiaoyang/dramacomb/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2026-05-08T04:40:57.984Z] DEBUG: [runtime-status] [56036] Resolved module firebase-functions {"declared":true,"installed":true,"version":"7.2.2","resolution":"/Users/xiaoyang/dramacomb/functions/node_modules/firebase-functions/lib/v2/index.js"}
+[debug] [2026-05-08T04:40:57.985Z] DEBUG: [runtime-status] [56036] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}]
+[debug] [2026-05-08T04:40:57.985Z] DEBUG: [runtime-status] [56036] Resolved module firebase-functions {"declared":true,"installed":true,"version":"7.2.2","resolution":"/Users/xiaoyang/dramacomb/functions/node_modules/firebase-functions/lib/v2/index.js"}
+[debug] [2026-05-08T04:40:57.985Z] DEBUG: [runtime-status] [56036] Detected firebase-functions v7+, skipping legacy stubs.
+[debug] [2026-05-08T04:40:57.986Z] DEBUG: [runtime-status] [56036] Resolved module firebase-admin {"declared":true,"installed":true,"version":"13.7.0","resolution":"/Users/xiaoyang/dramacomb/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2026-05-08T04:40:58.010Z] DEBUG: [runtime-status] [56036] Resolved module firebase-functions {"declared":true,"installed":true,"version":"7.2.2","resolution":"/Users/xiaoyang/dramacomb/functions/node_modules/firebase-functions/lib/v2/index.js"}
+[debug] [2026-05-08T04:40:58.127Z] DEBUG: [runtime-status] [56036] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"13.7.0","resolution":"/Users/xiaoyang/dramacomb/functions/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2026-05-08T04:40:58.526Z] DEBUG: [runtime-status] [56036] Functions runtime initialized. {"cwd":"/Users/xiaoyang/dramacomb/functions","node_version":"22.21.0"}
+[debug] [2026-05-08T04:40:58.527Z] DEBUG: [runtime-status] [56036] Listening to port: /var/folders/3k/29zxl2ld1jv47c1ky4b1h9fm0000gn/T/fire_emu_d1c9c02f536b808e.sock
+[debug] [2026-05-08T04:40:58.605Z] DEBUG: [worker-us-central1-dailyTRC20Fetch-4a7f9259-bdfd-4463-9703-be73eeadbee6]: IDLE
+[info] >  === 每日 TRC20 USDT 转入抓取开始 === {"user":"=== 每日 TRC20 USDT 转入抓取开始 ===","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-dailyTRC20Fetch"},"extension":{},"message":"\u001b[90m> \u001b[39m === 每日 TRC20 USDT 转入抓取开始 ==="}}
+[info] >  开始抓取 TPhfG1eoFp652ctsftobZJqMVwkZ1KAVv3 的 TRC20 USDT 转入记录 {"user":"开始抓取 TPhfG1eoFp652ctsftobZJqMVwkZ1KAVv3 的 TRC20 USDT 转入记录","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-dailyTRC20Fetch"},"extension":{},"message":"\u001b[90m> \u001b[39m 开始抓取 TPhfG1eoFp652ctsftobZJqMVwkZ1KAVv3 的 TRC20 USDT 转入记录"}}
+[info] >  时间范围: 2026-05-07 00:00:00 +08:00 ~ 2026-05-07 23:59:59 +08:00 {"user":"时间范围: 2026-05-07 00:00:00 +08:00 ~ 2026-05-07 23:59:59 +08:00","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-dailyTRC20Fetch"},"extension":{},"message":"\u001b[90m> \u001b[39m 时间范围: 2026-05-07 00:00:00 +08:00 ~ 2026-05-07 23:59:59 +08:00"}}
+[info] >  第 1 页: 共 49 条，当日转入累计 32 条 {"user":"第 1 页: 共 49 条，当日转入累计 32 条","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-dailyTRC20Fetch"},"extension":{},"message":"\u001b[90m> \u001b[39m 第 1 页: 共 49 条，当日转入累计 32 条"}}
+[info] >  已到达昨日数据前边界，停止翻页 {"user":"已到达昨日数据前边界，停止翻页","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-dailyTRC20Fetch"},"extension":{},"message":"\u001b[90m> \u001b[39m 已到达昨日数据前边界，停止翻页"}}
+[info] >  抓取完成，共 32 条转入记录 {"user":"抓取完成，共 32 条转入记录","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-dailyTRC20Fetch"},"extension":{},"message":"\u001b[90m> \u001b[39m 抓取完成，共 32 条转入记录"}}
+[warn] ⚠  Google API requested!
+   - URL: "https://www.googleapis.com/oauth2/v4/token"
+   - Be careful, this may be a production service. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-dailyTRC20Fetch"},"extension":{},"message":"Google API requested!\n   - URL: \"https://www.googleapis.com/oauth2/v4/token\"\n   - Be careful, this may be a production service."}}
+[warn] ⚠  Google API requested!
+   - URL: "https://sheets.googleapis.com/v4/spreadsheets/1KlTsTHk-j8oX2v3n5tVOiB1nvsdsCjElOE1FHp1cH8k"
+   - Be careful, this may be a production service. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-dailyTRC20Fetch"},"extension":{},"message":"Google API requested!\n   - URL: \"https://sheets.googleapis.com/v4/spreadsheets/1KlTsTHk-j8oX2v3n5tVOiB1nvsdsCjElOE1FHp1cH8k\"\n   - Be careful, this may be a production service."}}
+[warn] ⚠  Google API requested!
+   - URL: "https://sheets.googleapis.com/v4/spreadsheets/1KlTsTHk-j8oX2v3n5tVOiB1nvsdsCjElOE1FHp1cH8k:batchUpdate"
+   - Be careful, this may be a production service. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-dailyTRC20Fetch"},"extension":{},"message":"Google API requested!\n   - URL: \"https://sheets.googleapis.com/v4/spreadsheets/1KlTsTHk-j8oX2v3n5tVOiB1nvsdsCjElOE1FHp1cH8k:batchUpdate\"\n   - Be careful, this may be a production service."}}
+[warn] ⚠  Google API requested!
+   - URL: "https://sheets.googleapis.com/v4/spreadsheets/1KlTsTHk-j8oX2v3n5tVOiB1nvsdsCjElOE1FHp1cH8k/values/2026-05-07%21A1?valueInputOption=RAW"
+   - Be careful, this may be a production service. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-dailyTRC20Fetch"},"extension":{},"message":"Google API requested!\n   - URL: \"https://sheets.googleapis.com/v4/spreadsheets/1KlTsTHk-j8oX2v3n5tVOiB1nvsdsCjElOE1FHp1cH8k/values/2026-05-07%21A1?valueInputOption=RAW\"\n   - Be careful, this may be a production service."}}
+[info] >  已创建 Sheet Tab: 2026-05-07 {"user":"已创建 Sheet Tab: 2026-05-07","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-dailyTRC20Fetch"},"extension":{},"message":"\u001b[90m> \u001b[39m 已创建 Sheet Tab: 2026-05-07"}}
+[warn] ⚠  Google API requested!
+   - URL: "https://sheets.googleapis.com/v4/spreadsheets/1KlTsTHk-j8oX2v3n5tVOiB1nvsdsCjElOE1FHp1cH8k/values/2026-05-07%21A1:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS"
+   - Be careful, this may be a production service. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-dailyTRC20Fetch"},"extension":{},"message":"Google API requested!\n   - URL: \"https://sheets.googleapis.com/v4/spreadsheets/1KlTsTHk-j8oX2v3n5tVOiB1nvsdsCjElOE1FHp1cH8k/values/2026-05-07%21A1:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS\"\n   - Be careful, this may be a production service."}}
+[info] >  已写入 32 条转入记录 → Sheet: 2026-05-07 {"user":"已写入 32 条转入记录 → Sheet: 2026-05-07","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-dailyTRC20Fetch"},"extension":{},"message":"\u001b[90m> \u001b[39m 已写入 32 条转入记录 → Sheet: 2026-05-07"}}
+[info] >  === Done === {"user":"=== Done ===","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-dailyTRC20Fetch"},"extension":{},"message":"\u001b[90m> \u001b[39m === Done ==="}}
+[debug] [2026-05-08T04:46:01.410Z] DEBUG: [worker-us-central1-dailyTRC20Fetch-4a7f9259-bdfd-4463-9703-be73eeadbee6]: exited
+[debug] [2026-05-08T04:46:01.410Z] DEBUG: [worker-us-central1-dailyTRC20Fetch-4a7f9259-bdfd-4463-9703-be73eeadbee6]: FINISHED

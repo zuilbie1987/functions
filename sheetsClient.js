@@ -1,7 +1,5 @@
 const { google } = require("googleapis");
 
-const SPREADSHEET_ID = process.env.SPREADSHEET_ID;
-
 // 表头列定义（只记录转入数据）
 const HEADERS = [
   "交易哈希(txid)",
@@ -14,7 +12,11 @@ const HEADERS = [
 ];
 
 async function getSheetsClient() {
-  const credentials = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_KEY);
+
+  const credentialsStr = process.env.GOOGLE_SERVICE_ACCOUNT_KEY;
+  if (!credentialsStr) throw new Error("Missing GOOGLE_SERVICE_ACCOUNT_KEY");
+  
+  const credentials = JSON.parse(credentialsStr);
   const auth = new google.auth.GoogleAuth({
     credentials,
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
@@ -23,6 +25,9 @@ async function getSheetsClient() {
 }
 
 async function ensureSheetTab(sheets, tabName) {
+  const SPREADSHEET_ID = process.env.SPREADSHEET_ID;
+  if (!SPREADSHEET_ID) throw new Error("Missing SPREADSHEET_ID");
+
   const meta = await sheets.spreadsheets.get({ spreadsheetId: SPREADSHEET_ID });
   const exists = meta.data.sheets.some(s => s.properties.title === tabName);
 
@@ -45,6 +50,7 @@ async function ensureSheetTab(sheets, tabName) {
 }
 
 async function appendRecordsToSheet(records, dateLabel) {
+    const SPREADSHEET_ID = process.env.SPREADSHEET_ID;
   if (records.length === 0) {
     console.log(`${dateLabel} 无转入数据`);
     return;

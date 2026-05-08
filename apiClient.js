@@ -1,7 +1,6 @@
 const axios = require("axios");
 
-// API Key 直接写入（Firebase Function 内部运行，不对外暴露）
-const TOKENVIEW_API_KEY = process.env.TOKENVIEW_API_KEY;
+
 const BASE_URL = "https://services.tokenview.io/vipapi";
 
 // 固定值
@@ -36,6 +35,10 @@ function toUTC8String(unixSec) {
  * @param {number} endTimestamp    昨日 23:59:59 UTC+8 的 Unix 秒
  */
 async function fetchIncomingUSDT(startTimestamp, endTimestamp) {
+    // API Key 直接写入（Firebase Function 内部运行，不对外暴露）
+const TOKENVIEW_API_KEY = process.env.TOKENVIEW_API_KEY;
+if (!TOKENVIEW_API_KEY) throw new Error("Missing TOKENVIEW_API_KEY");
+
   const results = [];
   let page = 1;
 
@@ -43,7 +46,7 @@ async function fetchIncomingUSDT(startTimestamp, endTimestamp) {
   console.log(`时间范围: ${toUTC8String(startTimestamp)} ~ ${toUTC8String(endTimestamp)}`);
 
   while (true) {
-    const url = `${BASE_URL}/trx/tokenaddresstx/${USDT_TRC20_CONTRACT}/${TARGET_ADDRESS}/${page}/${PAGE_SIZE}?apikey=${TOKENVIEW_API_KEY}`;
+    const url = `${BASE_URL}/trx/address/tokentrans/${TARGET_ADDRESS}/${USDT_TRC20_CONTRACT}/${page}/${PAGE_SIZE}?apikey=${TOKENVIEW_API_KEY}`;
 
     let data;
     try {

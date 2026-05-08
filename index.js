@@ -4,8 +4,10 @@ const axios = require("axios");
 const ALLOWED_ORIGINS = [
   "https://dramacomb.com",  // 你的正式域名
   "https://dramacomb.web.app", // Firebase 默认托管域名
-  "http://dramacomb.firebaseapp.com",        // 本地开发调试地址
+  "https://dramacomb.firebaseapp.com",        // 本地开发调试地址
   "https://dramacomb.com/",
+  "http://localhost:3000",             // 如果需要本地前端测试可以加上
+  "http://127.0.0.1:5500",             // 其他可能的测试域名
   "dramacomb.com"
 ];
 
