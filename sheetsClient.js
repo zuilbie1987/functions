@@ -24,23 +24,20 @@ async function getSheetsClient() {
   return google.sheets({ version: "v4", auth });
 }
 
-async function ensureSheetTab(sheets, tabName) {
-  const SPREADSHEET_ID = process.env.SPREADSHEET_ID;
-  if (!SPREADSHEET_ID) throw new Error("Missing SPREADSHEET_ID");
-
-  const meta = await sheets.spreadsheets.get({ spreadsheetId: SPREADSHEET_ID });
+async function ensureSheetTab(sheets, spreadsheetId, tabName) {
+  const meta = await sheets.spreadsheets.get({ spreadsheetId });
   const exists = meta.data.sheets.some(s => s.properties.title === tabName);
 
   if (!exists) {
     await sheets.spreadsheets.batchUpdate({
-      spreadsheetId: SPREADSHEET_ID,
+      spreadsheetId,
       requestBody: {
         requests: [{ addSheet: { properties: { title: tabName } } }]
       },
     });
     // 写表头
     await sheets.spreadsheets.values.update({
-      spreadsheetId: SPREADSHEET_ID,
+      spreadsheetId,
       range: `${tabName}!A1`,
       valueInputOption: "RAW",
       requestBody: { values: [HEADERS] },
@@ -50,14 +47,17 @@ async function ensureSheetTab(sheets, tabName) {
 }
 
 async function appendRecordsToSheet(records, dateLabel) {
-    const SPREADSHEET_ID = process.env.SPREADSHEET_ID;
+  // 统一在入口处读取和校验，传递给所有子函数
+  const SPREADSHEET_ID = process.env.SPREADSHEET_ID;
+  if (!SPREADSHEET_ID) throw new Error("Missing SPREADSHEET_ID");
+
   if (records.length === 0) {
     console.log(`${dateLabel} 无转入数据`);
     return;
   }
 
   const sheets = await getSheetsClient();
-  await ensureSheetTab(sheets, dateLabel);
+  await ensureSheetTab(sheets, SPREADSHEET_ID, dateLabel);
 
   const rows = records.map(r => [
     r.txid,
